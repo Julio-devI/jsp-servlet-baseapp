@@ -13,3 +13,9 @@ demandas:
 - Atualizei o Readme com minha demanda
 - Endereço do render: https://jsp-servlet-baseapp-imab.onrender.com
 - Criei o Database na máquina do cliente
+
+Ana Júlia Figuerêdo Bernardo;
+demandas:
+
+- Adicionei meu nome na página about;
+- Adicionei meu nome na página README e também minhas demandas.
