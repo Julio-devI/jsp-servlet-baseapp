@@ -23,5 +23,7 @@ demandas:
 Luís Gustavo Calado Pereira dos Santos;
 demandas:
 
+- Criei a minha Branch
 - Adicionei o meu nome completo na página 'about.jsp'
-- Adicionei meu nome completo no README juntamente das minhas demandas.
+- Adicionei meu nome completo no README juntamente das minhas demandas
+- Corrigi erros de digitação na página 'about.jsp'
