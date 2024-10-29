@@ -17,6 +17,7 @@ demandas:
 Ana Júlia Figuerêdo Bernardo;
 demandas:
 
+- Criei minha Branch;
 - Adicionei meu nome na página about;
 - Adicionei meu nome na página README e também minhas demandas.
 
