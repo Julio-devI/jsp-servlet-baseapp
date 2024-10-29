@@ -19,3 +19,9 @@ demandas:
 
 - Adicionei meu nome na página about;
 - Adicionei meu nome na página README e também minhas demandas.
+
+Luís Gustavo Calado Pereira dos Santos;
+demandas:
+
+- Adicionei o meu nome completo na página 'about.jsp'
+- Adicionei meu nome completo no README juntamente das minhas demandas.
