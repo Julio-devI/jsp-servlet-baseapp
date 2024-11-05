@@ -18,7 +18,7 @@
     			<label for="floatingInput">Nome</label>
     		</div>
     		<div class="form-floating">
-    			<input type="email" name="listeners" class="form-control" id="floatingInput" placehholder="seu-email@gmail.com" />
+    			<input type="email" name="email" class="form-control" id="floatingInput" placehholder="seu-email@gmail.com" />
     			<label for="floatingInput">E-mail</label>
     		</div>
     		<div class="form-floating">
