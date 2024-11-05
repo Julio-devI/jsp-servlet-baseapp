@@ -17,5 +17,14 @@ demandas:
 Ana Júlia Figuerêdo Bernardo;
 demandas:
 
+- Criei minha Branch;
 - Adicionei meu nome na página about;
 - Adicionei meu nome na página README e também minhas demandas.
+
+Luís Gustavo Calado Pereira dos Santos;
+demandas:
+
+- Criei a minha Branch
+- Adicionei o meu nome completo na página 'about.jsp'
+- Adicionei meu nome completo no README juntamente das minhas demandas
+- Corrigi erros de digitação na página 'about.jsp'
