@@ -32,4 +32,16 @@ public class InstallService {
 					+ "    email VARCHAR(255) NOT NULL,"
 					+ "    password VARCHAR(255) NOT NULL)");
 	}
+
+	public void deleteAlbunsTable() throws ClassNotFoundException, SQLException {
+		statement("DROP TABLE IF EXISTS users");
+	}
+
+	public void createAlbunsTable() throws ClassNotFoundException, SQLException {
+		statement("CREATE TABLE albuns ("
+				+ "    uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
+				+ "    nome VARCHAR(255) NOT NULL,"
+				+ "    reproducoes INTEGER NOT NULL,"
+				+ "    maisReproduzido BOOLEAN NOT NULL)");
+	}
 }
