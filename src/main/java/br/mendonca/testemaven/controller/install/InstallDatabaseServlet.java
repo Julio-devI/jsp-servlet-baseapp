@@ -31,6 +31,10 @@ public class InstallDatabaseServlet extends HttpServlet {
 			
 			service.createUserTable();
 			msg += "<h2>Create table user sucessful!</h2>\n";
+
+			service.createArtistTable();
+			msg += "<h2>Create table user sucessful!</h2>\n";
+
 			
 			page.println("<html lang='pt-br'><head><title>Teste</title></head><body>");
 			page.println(msg);
@@ -46,8 +50,8 @@ public class InstallDatabaseServlet extends HttpServlet {
 			page.close();
 			
 		} catch (Exception e) {
-			// Escreve as mensagens de Exception em uma página de resposta.
-			// Não apagar este bloco.
+			// Escreve as mensagens de Exception em uma pï¿½gina de resposta.
+			// Nï¿½o apagar este bloco.
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
