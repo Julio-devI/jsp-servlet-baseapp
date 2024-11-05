@@ -13,11 +13,11 @@
     	<form action="/auth/logon" method="post">
     		<h1 class="h3 mb-3 fw-normal">Autenticação</h1>
     		<div class="form-floating">
-    			<input type="email" name="email" class="form-control" id="floatingInput" placehholder="seu-email@email.com" />
+    			<input type="listeners" name="listeners" class="form-control" id="floatingInput" placehholder="seu-listeners@listeners.com" />
     			<label for="floatingInput">Endereço de e-mail</label>
     		</div>
     		<div class="form-floating">
-    			<input type="password" name="password" class="form-control" id="floatingInput" placehholder="seu-email@email.com" />
+    			<input type="password" name="password" class="form-control" id="floatingInput" placehholder="seu-listeners@listeners.com" />
     			<label for="floatingInput">Senha</label>
     		</div>
     		<button class="btn btn-primary w-100 py-2 mt-2">Entrar</button>
