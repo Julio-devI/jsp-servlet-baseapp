@@ -13,7 +13,7 @@
     	<form action="/auth/logon" method="post">
     		<h1 class="h3 mb-3 fw-normal">Autenticação</h1>
     		<div class="form-floating">
-    			<input type="listeners" name="listeners" class="form-control" id="floatingInput" placehholder="seu-listeners@listeners.com" />
+    			<input type="email" name="email" class="form-control" id="floatingInput" placehholder="email@email.com" />
     			<label for="floatingInput">Endereço de e-mail</label>
     		</div>
     		<div class="form-floating">

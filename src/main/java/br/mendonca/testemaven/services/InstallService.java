@@ -33,6 +33,10 @@ public class InstallService {
 					+ "    password VARCHAR(255) NOT NULL)");
 	}
 
+	public void deleteArtistTable() throws ClassNotFoundException, SQLException {
+		statement("DROP TABLE IF EXISTS users");
+	}
+
 	public void createArtistTable() throws ClassNotFoundException, SQLException {
 		statement("CREATE TABLE artists ("
 				+ "    uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
