@@ -30,6 +30,7 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link" href="/dashboard/dashboard.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/users">Users</a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard/artists">Artists</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/about.jsp">About</a></li>
 					</ul>
 					<span class="navbar-text">
@@ -41,14 +42,14 @@
     
     
     
-    	<h1 class="h3 mb-3 fw-normal">Usuários</h1>
+    	<h1 class="h3 mb-3 fw-normal">Artistas</h1>
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col"></th>
-					<th scope="col">Nome</th>
-					<th scope="col">E-mail</th>
-					<th scope="col"></th>
+					<th scope="col">uuid</th>
+					<th scope="col">Nome do artista</th>
+					<th scope="col">Ouvintes do artista</th>
+					<th scope="col">O artista esta em atividade ?</th>
 				</tr>
 			</thead>
 			<tbody>
