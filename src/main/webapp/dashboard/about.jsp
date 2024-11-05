@@ -73,7 +73,7 @@ if (session.getAttribute("user") != null) {
 				</tr>
 				<tr>
                 	<td scope="col">Luís Gustavo Calado Pereira dos Santos</td>
-                	<td scope="col">Coloque aqui sua entidade de trabalho</td>
+                	<td scope="col">Álbuns</td>
                 	<td scope="col">Coloque aqui sua regra de negócio</td>
                 </tr>
 			<tbody>
