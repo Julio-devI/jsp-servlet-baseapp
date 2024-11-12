@@ -16,7 +16,7 @@ public class Artist {
     public String getArtistname() {
         return artistname;
     }
-    public void setArtistname(String name) {
+    public void setArtistname(String artistname) {
         this.artistname = artistname;
     }
     public Integer getListeners() {
