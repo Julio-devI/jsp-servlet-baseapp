@@ -16,16 +16,32 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/dashboard/artists")
 public class ListArtistsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final int PAGE_SIZE = 3;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter page = response.getWriter();
 
 		try {
+			int pageNumber = 1;
+			String pageParam = request.getParameter("page");
+
+			if(pageParam != null && !pageParam.isEmpty())
+			{
+				pageNumber = Integer.parseInt(pageParam);
+			}
+
 			ArtistDAO artistDAO = new ArtistDAO();
-			List<Artist> artistList = artistDAO.listAllArtist();
+
+			List<Artist> artistList = artistDAO.listAllArtist(pageNumber, PAGE_SIZE);
+
+			int totalArtists = artistDAO.countTotalArtists();
+			int totalPages = (int) Math.ceil((double) totalArtists / PAGE_SIZE);
 
 			request.setAttribute("artistList", artistList);
+			request.setAttribute("currentPage", pageNumber);
+			request.setAttribute("totalPages", totalPages);
+
 			request.getRequestDispatcher("list-artists.jsp").forward(request, response);
 		} catch (Exception e) {
 			// Escreve as mensagens de Exception em uma pagina de resposta.

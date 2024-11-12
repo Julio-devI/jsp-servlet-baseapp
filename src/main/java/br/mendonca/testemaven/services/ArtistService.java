@@ -33,7 +33,17 @@ public class ArtistService {
 		artistDAO.registerArtist(artist);
 	}
 
-	public List<Artist> listAllArtists() throws ClassNotFoundException, SQLException {
-		return artistDAO.listAllArtist();
+	public List<Artist> listArtistsPage(int pageNumber, int itemsPerPage) throws ClassNotFoundException, SQLException {
+		int offset = (pageNumber - 1) * itemsPerPage;  // Calcula o offset para a consulta
+
+		return artistDAO.listAllArtist(offset, itemsPerPage);
+	}
+
+	public int countTotalArtists() throws ClassNotFoundException, SQLException {
+		return artistDAO.countTotalArtists();
+	}
+
+	public List<Artist> listAllArtists(int pageNumber, int itemsPerPage) throws ClassNotFoundException, SQLException {
+		return artistDAO.listAllArtist(pageNumber, itemsPerPage);
 	}
 }
