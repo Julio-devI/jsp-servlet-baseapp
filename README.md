@@ -30,15 +30,24 @@ demandas:
 - Criei minha Branch;
 - Adicionei meu nome na página about;
 - Adicionei meu nome na página README e também minhas demandas.
-
-Luís Gustavo Calado Pereira dos Santos;
-demandas:
-
-- Criei a minha Branch
-- Adicionei o meu nome completo na página 'about.jsp'
-- Adicionei meu nome completo no README juntamente das minhas demandas
-- Corrigi erros de digitação na página 'about.jsp'
 semana 2:
 - Criação da entidade Musicas;
 - Adição das demandas cumpridas na página README.md.
 
+## Luís Gustavo Calado Pereira dos Santos; demandas:
+
+### Semana 1:
+- Criei a minha Branch
+- Adicionei o meu nome completo na página 'about.jsp';
+- Adicionei meu nome completo no README juntamente das minhas demandas;
+- Corrigi erros de digitação na página 'about.jsp';
+
+### Semana 2: 
+- Nada.
+
+### Semana 3:
+- Criei a funcao do usuario conseguir instalar novas tabelas no BD pelo endpoint "install";
+- Criei a funcao do usuario conseguir inserir no sistema de forma permanente uma ou mais entidades com suas propriedades através de um item de menu;
+- Criei a funcao do usuário conseguir listar todas as entidades cadastradas através de um item de menu;
+- Criei a funcao do usuario conseguir exibir as propriedades de uma entidade selecionada;
+- Preenchi o about.
