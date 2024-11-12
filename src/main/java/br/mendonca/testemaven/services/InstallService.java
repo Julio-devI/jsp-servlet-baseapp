@@ -44,4 +44,53 @@ public class InstallService {
 				+ "    listeners INTEGER NOT NULL,"
 				+ "    active BOOLEAN NOT NULL)");
 	}
+
+	public void seedArtist1Table() throws ClassNotFoundException, SQLException {
+		statement("INSERT INTO artists (artistname, listeners, active) VALUES ('"
+				+ "Madonna" + "', "
+				+ 12 + ", "
+				+ true + ")");
+	}
+
+	public void seedArtist2Table() throws ClassNotFoundException, SQLException {
+		statement("INSERT INTO artists (artistname, listeners, active) VALUES ('"
+				+ "Bruno Mars" + "', "
+				+ 20000 + ", "
+				+ true + ")");
+	}
+
+	public void seedArtist3Table() throws ClassNotFoundException, SQLException {
+		statement("INSERT INTO artists (artistname, listeners, active) VALUES ('"
+				+ "Gusttavo Lima" + "', "
+				+ 120000 + ", "
+				+ true + ")");
+	}
+
+	public void seedArtist4Table() throws ClassNotFoundException, SQLException {
+		statement("INSERT INTO artists (artistname, listeners, active) VALUES ('"
+				+ "Ed Sheeran" + "', "
+				+ 50000 + ", "
+				+ true + ")");
+	}
+
+	public void seedArtist5Table() throws ClassNotFoundException, SQLException {
+		statement("INSERT INTO artists (artistname, listeners, active) VALUES ('"
+				+ "Katy perry" + "', "
+				+ 2 + ", "
+				+ true + ")");
+	}
+
+	public void seedArtist6Table() throws ClassNotFoundException, SQLException {
+		statement("INSERT INTO artists (artistname, listeners, active) VALUES ('"
+				+ "Paul McCartney" + "', "
+				+ 5 + ", "
+				+ true + ")");
+	}
+
+	public void seedArtist7Table() throws ClassNotFoundException, SQLException {
+		statement("INSERT INTO artists (artistname, listeners, active) VALUES ('"
+				+ "Mariah Carey" + "', "
+				+ 12 + ", "
+				+ true + ")");
+	}
 }
