@@ -49,7 +49,6 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">uuid</th>
 					<th scope="col">Nome do album</th>
 					<th scope="col">Faixas do album</th>
 					<th scope="col">O Album foi lançado?</th>
@@ -61,7 +60,6 @@
 			for (Album album : albumList) {
 			%>
 			<tr>
-				<td><%= album.getUuid() %></td>
 				<td><%= album.getAlbumname() %></td>
 				<td><%= album.getTracks() %></td>
 				<td><%= album.getReleased() ? "Sim" : "Nao"%></td>
