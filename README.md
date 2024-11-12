@@ -22,6 +22,7 @@ demandas:
 - Criei a funcao do usuario conseguir exibir as propriedades de uma entidade selecionada
 - Editei o meu about preenchendo a entidade na qual estou trabalhando
 - Criei a funcao do usuario conseguir instalar novas tabelas no banco de dados com 7 individuos pelo endpoint "install"
+- Criei a funcao do usuario conseguir visualizar todos os individuos listados com paginacao de 3 individuos
 
 Ana Júlia Figuerêdo Bernardo;
 demandas:
