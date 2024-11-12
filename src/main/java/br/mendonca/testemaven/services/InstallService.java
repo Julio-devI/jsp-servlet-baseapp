@@ -49,12 +49,12 @@ public class InstallService {
 		statement("DROP TABLE IF EXISTS albuns");
 	}
 
-	public void createAlbumTable() throws ClassNotFoundException, SQLException {
-		statement("CREATE TABLE albuns ("
-				+ "    uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
-				+ "    albumname VARCHAR(255) NOT NULL,"
-				+ "    tracks INTEGER NOT NULL,"
-				+ "    released BOOLEAN NOT NULL)");
+	//public void createAlbumTable() throws ClassNotFoundException, SQLException {
+		//statement("CREATE TABLE albuns ("
+				//+ "    uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
+				//+ "    albumname VARCHAR(255) NOT NULL,"
+				//+ "    tracks INTEGER NOT NULL,"
+				//+ "    released BOOLEAN NOT NULL)");
 
 	public void seedArtist1Table() throws ClassNotFoundException, SQLException {
 		statement("INSERT INTO artists (artistname, listeners, active) VALUES ('"
