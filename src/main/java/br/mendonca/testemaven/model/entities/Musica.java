@@ -1,11 +1,11 @@
 package br.mendonca.testemaven.model.entities;
 
-public class Musicas {
+public class Musica {
     
     private String uuid;
 	private String nomeMusica;
-	private int visualizacao;
-	private boolean musicaFavorita;
+	private Integer visualizacao;
+	private Boolean musicaFavorita;
 
     public String getUuid() {
         return uuid;
@@ -19,16 +19,16 @@ public class Musicas {
 	public void setNomeMusica(String nomeMusica) {
 		this.nomeMusica = nomeMusica;
 	}
-	public int getvisualizacao() {
+	public Integer getVisualizacao() {
 		return visualizacao;
 	}
-	public void setVisualizacao(int visualizacao) {
+	public void setVisualizacao(Integer visualizacao) {
 		this.visualizacao = visualizacao;
 	}
-	public boolean getMusicaFavorita() {
+	public Boolean getMusicaFavorita() {
 		return musicaFavorita;
 	}
-	public void setMusicaFavorita(boolean musicaFavorita) {
+	public void setMusicaFavorita(Boolean musicaFavorita) {
 		is.musicaFavorita = musicaFavorita;
 	}
 
