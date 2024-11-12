@@ -44,6 +44,27 @@ public class InstallDatabaseServlet extends HttpServlet {
 			service.createAlbumTable();
 			msg += "<h2>Create table Album sucessful!</h2>\n";
 
+			service.seedArtist1Table();
+			msg += "<h2>Seed artist1 sucessful!</h2>\n";
+
+			service.seedArtist2Table();
+			msg += "<h2>Seed artist2 sucessful!</h2>\n";
+
+			service.seedArtist3Table();
+			msg += "<h2>Seed artist3 sucessful!</h2>\n";
+
+			service.seedArtist4Table();
+			msg += "<h2>Seed artist4 sucessful!</h2>\n";
+
+			service.seedArtist5Table();
+			msg += "<h2>Seed artist5 sucessful!</h2>\n";
+
+			service.seedArtist6Table();
+			msg += "<h2>Seed artist6 sucessful!</h2>\n";
+
+			service.seedArtist7Table();
+			msg += "<h2>Seed artist7 sucessful!</h2>\n";
+
 			page.println("<html lang='pt-br'><head><title>Teste</title></head><body>");
 			page.println(msg);
 			/*/
