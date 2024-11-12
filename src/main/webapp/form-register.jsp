@@ -14,15 +14,15 @@
     	<form action="register" method="post">
     		<h1 class="h3 mb-3 fw-normal">Cadastrar novo usuário:</h1>
     		<div class="form-floating">
-    			<input type="text" name="name" class="form-control" id="floatingInput" placehholder="Digite seu nome." />
+    			<input type="text" name="name" class="form-control" id="floatingInput" placeholder="Digite seu nome." />
     			<label for="floatingInput">Nome</label>
     		</div>
     		<div class="form-floating">
-    			<input type="email" name="email" class="form-control" id="floatingInput" placehholder="seu-email@email.com" />
+    			<input type="email" name="email" class="form-control" id="floatingInput" placeholder="seu-email@gmail.com" />
     			<label for="floatingInput">E-mail</label>
     		</div>
     		<div class="form-floating">
-    			<input type="password" name="password" class="form-control" id="floatingInput" placehholder="Digite sua senha." />
+    			<input type="password" name="password" class="form-control" id="floatingInput" placeholder="Digite sua senha." />
     			<label for="floatingInput">Senha</label>
     		</div>
     		<button class="btn btn-primary w-100 py-2 mt-2">Cadastrar-se</button>
