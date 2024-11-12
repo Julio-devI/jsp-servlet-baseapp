@@ -13,7 +13,14 @@ demandas:
 - Atualizei o Readme com minha demanda
 - Endereço do render: https://jsp-servlet-baseapp-imab.onrender.com
 - Criei o Database na máquina do cliente
+## Semana 2:
 - Criei a funcao do usuario conseguir instalar novas tabelas no BD pelo endpoint "install"
+
+## Semana 3:
+- Criei a funcao do usuario conseguir inserir no sistema de forma permanente uma ou mais entidades com suas propriedades através de um item de menu
+- Criei a funcao do usuário conseguir listar todas as entidades cadastradas através de um item de menu
+- Criei a funcao do usuario conseguir exibir as propriedades de uma entidade selecionada
+- Editei o meu about preenchendo a entidade na qual estou trabalhando
 
 Ana Júlia Figuerêdo Bernardo;
 demandas:

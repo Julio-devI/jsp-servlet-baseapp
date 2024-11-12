@@ -63,7 +63,7 @@ if (session.getAttribute("user") != null) {
 				</tr>
 				<tr>
 					<td scope="col">Júlio Alves de Almeida Valença</td>
-					<td scope="col">Coloque aqui sua entidade de trabalho</td>
+					<td scope="col">Artists</td>
 					<td scope="col">Coloque aqui sua regra de negócio</td>
 				</tr>
 				<tr>
@@ -72,10 +72,10 @@ if (session.getAttribute("user") != null) {
 					<td scope="col">Coloque aqui sua regra de negócio</td>
 				</tr>
 				<tr>
-                			<td scope="col">Luís Gustavo Calado Pereira dos Santos</td>
-                			<td scope="col">Coloque aqui sua entidade de trabalho</td>
-                			<td scope="col">Coloque aqui sua regra de negócio</td>
-                		</tr>
+                	<td scope="col">Luís Gustavo Calado Pereira dos Santos</td>
+                	<td scope="col">Album</td>
+                	<td scope="col">Coloque aqui sua regra de negócio</td>
+                </tr>
 			<tbody>
 			</tbody>
 		</table>

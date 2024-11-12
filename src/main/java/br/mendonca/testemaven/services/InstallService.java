@@ -34,7 +34,7 @@ public class InstallService {
 	}
 
 	public void deleteArtistTable() throws ClassNotFoundException, SQLException {
-		statement("DROP TABLE IF EXISTS users");
+		statement("DROP TABLE IF EXISTS artists");
 	}
 
 	public void createArtistTable() throws ClassNotFoundException, SQLException {
@@ -43,5 +43,17 @@ public class InstallService {
 				+ "    artistname VARCHAR(255) NOT NULL,"
 				+ "    listeners INTEGER NOT NULL,"
 				+ "    active BOOLEAN NOT NULL)");
+	}
+
+	public void deleteAlbumTable() throws ClassNotFoundException, SQLException {
+		statement("DROP TABLE IF EXISTS albuns");
+	}
+
+	public void createAlbumTable() throws ClassNotFoundException, SQLException {
+		statement("CREATE TABLE albuns ("
+				+ "    uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
+				+ "    albumname VARCHAR(255) NOT NULL,"
+				+ "    tracks INTEGER NOT NULL,"
+				+ "    released BOOLEAN NOT NULL)");
 	}
 }
