@@ -47,7 +47,6 @@
 	<table class="table">
 		<thead>
 		<tr>
-			<th scope="col">uuid</th>
 			<th scope="col">Nome do artista</th>
 			<th scope="col">Ouvintes do artista</th>
 			<th scope="col">O artista esta em atividade ?</th>
@@ -59,7 +58,6 @@
 			for (Artist artist : artistList) {
 		%>
 		<tr>
-			<td><%= artist.getUuid() %></td>
 			<td><%= artist.getArtistname() %></td>
 			<td><%= artist.getListeners() %></td>
 			<td><%= artist.getActive() ? "Sim" : "Nao"%></td>
