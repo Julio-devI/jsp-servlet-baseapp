@@ -48,8 +48,7 @@
 		<thead>
 		<tr>
 			<th scope="col">Nome do artista</th>
-			<th scope="col">Ouvintes do artista</th>
-			<th scope="col">O artista esta em atividade ?</th>
+			<th>Mais detalhes</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -59,8 +58,7 @@
 		%>
 		<tr>
 			<td><%= artist.getArtistname() %></td>
-			<td><%= artist.getListeners() %></td>
-			<td><%= artist.getActive() ? "Sim" : "Nao"%></td>
+			<td><a href="list-more-details-artists.jsp?artistId=<%= artist.getUuid() %>" class="btn btn-success btn-sm"> Mais detalhes </a></td>
 		</tr>
 		<% } %>
 		</tbody>
