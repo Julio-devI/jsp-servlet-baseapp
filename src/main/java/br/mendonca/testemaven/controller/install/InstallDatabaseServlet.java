@@ -41,7 +41,7 @@ public class InstallDatabaseServlet extends HttpServlet {
 			service.deleteAlbumTable();
 			msg += "<h2>Delete table Album sucessful!</h2>\n";
 
-			service.createAlbumTable();
+			//service.createAlbumTable();
 			msg += "<h2>Create table Album sucessful!</h2>\n";
 
 			service.seedArtist1Table();
