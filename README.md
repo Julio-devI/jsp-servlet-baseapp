@@ -51,3 +51,4 @@ semana 2:
 - Criei a funcao do usuário conseguir listar todas as entidades cadastradas através de um item de menu;
 - Criei a funcao do usuario conseguir exibir as propriedades de uma entidade selecionada;
 - Preenchi o about.
+- Criei a funcao do usuario conseguir instalar novas tabelas no banco de dados com 7 individuos pelo endpoint "install"
