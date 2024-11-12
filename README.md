@@ -23,6 +23,7 @@ demandas:
 - Editei o meu about preenchendo a entidade na qual estou trabalhando
 - Criei a funcao do usuario conseguir instalar novas tabelas no banco de dados com 7 individuos pelo endpoint "install"
 - Criei a funcao do usuario conseguir visualizar todos os individuos listados com paginacao de 3 individuos
+- Criei a funcao que permite que o usuario delete, mas o item nao e totalmente deletado do banco 
 
 Ana Júlia Figuerêdo Bernardo;
 demandas:
