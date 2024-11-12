@@ -42,7 +42,8 @@ public class InstallService {
 				+ "    uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
 				+ "    artistname VARCHAR(255) NOT NULL,"
 				+ "    listeners INTEGER NOT NULL,"
-				+ "    active BOOLEAN NOT NULL)");
+				+ "    active BOOLEAN NOT NULL,"
+				+ "	   visible BOOLEAN DEFAULT true NOT NULL)");
 	}
 
 	public void seedArtist1Table() throws ClassNotFoundException, SQLException {
@@ -75,7 +76,7 @@ public class InstallService {
 
 	public void seedArtist5Table() throws ClassNotFoundException, SQLException {
 		statement("INSERT INTO artists (artistname, listeners, active) VALUES ('"
-				+ "Katy perry" + "', "
+				+ "Katy Perry" + "', "
 				+ 2 + ", "
 				+ true + ")");
 	}

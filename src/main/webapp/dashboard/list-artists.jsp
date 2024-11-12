@@ -47,6 +47,7 @@
 		<tr>
 			<th scope="col">Nome do artista</th>
 			<th>Mais detalhes</th>
+			<th>Deletar</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -57,6 +58,7 @@
 		<tr>
 			<td><%= artist.getArtistname() %></td>
 			<td><a href="list-more-details-artists.jsp?artistId=<%= artist.getUuid() %>" class="btn btn-success btn-sm"> Mais detalhes </a></td>
+			<td><a href="#" class="btn btn-danger btn-sm">Deletar</a></td>
 		</tr>
 		<% } %>
 		</tbody>
