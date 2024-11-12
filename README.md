@@ -38,3 +38,7 @@ demandas:
 - Adicionei o meu nome completo na página 'about.jsp'
 - Adicionei meu nome completo no README juntamente das minhas demandas
 - Corrigi erros de digitação na página 'about.jsp'
+semana 2:
+- Criação da entidade Musicas;
+- Adição das demandas cumpridas na página README.md.
+
