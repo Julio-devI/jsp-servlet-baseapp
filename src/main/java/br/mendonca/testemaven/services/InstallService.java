@@ -60,13 +60,4 @@ public class InstallService {
 	public void deleteMusicaTable() throws ClassNotFoundException, SQLException {
 		statement("DROP TABLE IF EXISTS musicas");
 	}
-
-	public void CreateMusicaTable() throws ClassNotFoundException, SQLException {
-		statement("CREATE TABLE musicas ("
-				+ "		uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
-				+ "		nomeMusica VARCHAR(255) NOT NULL,"
-				+ "		visualizacao INTEGER NOT NULL,"
-				+ "		musicaFavorita BOOLEAN NOT NULL)");
-	}
-
 }
