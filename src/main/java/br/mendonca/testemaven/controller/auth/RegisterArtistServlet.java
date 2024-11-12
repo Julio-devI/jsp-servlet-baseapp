@@ -37,7 +37,7 @@ public class RegisterArtistServlet extends HttpServlet {
 			ArtistDAO artistDAO = new ArtistDAO();
 			artistDAO.registerArtist(artist);
 
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("dashboard/dashboard.jsp");
 
 		}catch (Exception e){
 			StringWriter sw = new StringWriter();
