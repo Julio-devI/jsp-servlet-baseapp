@@ -34,7 +34,7 @@ public class InstallService {
 	}
 
 	public void deleteArtistTable() throws ClassNotFoundException, SQLException {
-		statement("DROP TABLE IF EXISTS users");
+		statement("DROP TABLE IF EXISTS artists");
 	}
 
 	public void createArtistTable() throws ClassNotFoundException, SQLException {

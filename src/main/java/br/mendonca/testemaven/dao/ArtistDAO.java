@@ -72,7 +72,7 @@ public class ArtistDAO {
 		return artist;
 	}
 
-	// TODO: N�o testado
+	// TO DO: Nao testado
 	public List<User> search(String name) throws ClassNotFoundException, SQLException {
 		ArrayList<User> lista = new ArrayList<User>();
 		
