@@ -6,6 +6,7 @@ public class Artist {
     private String artistname;
     private Integer listeners;
     private Boolean active;
+    private Boolean visible;
 
     public String getUuid() {
         return uuid;
@@ -30,5 +31,11 @@ public class Artist {
     }
     public void setActive(Boolean active) {
         this.active = active;
+    }
+    public Boolean getVisible() {
+        return visible;
+    }
+    public void setVisible(Boolean visible) {
+        this.visible = visible;
     }
 }

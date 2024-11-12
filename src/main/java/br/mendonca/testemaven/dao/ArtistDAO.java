@@ -22,34 +22,64 @@ public class ArtistDAO {
 		ps.close();
 	}
 
-	public List<Artist> listAllArtist(int pageNumber, int pageSize) throws ClassNotFoundException, SQLException {
-		ArrayList<Artist> lista = new ArrayList<>();
+	public void setArtistVisible(UUID artistId, boolean visible) throws ClassNotFoundException, SQLException {
+		Connection conn = ConnectionPostgres.getConexao();
+		conn.setAutoCommit(true);
+		String sql = "UPDATE artists SET visible = ? WHERE uuid = ?";
 
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setBoolean(1, visible);
+			ps.setObject(2, artistId);
+			ps.executeUpdate();
+		}
+	}
+
+	public List<Artist> listAllArtist(int pageNumber, int pageSize) throws ClassNotFoundException, SQLException {
 		Connection conn = ConnectionPostgres.getConexao();
 		conn.setAutoCommit(true);
 
+		if (pageNumber < 1 || pageSize < 1) {
+			throw new IllegalArgumentException("pageNumber e pageSize devem ser maiores que 0");
+		}
+
+		ArrayList<Artist> lista = new ArrayList<Artist>();
+
+		// Calcular o offset com base no número da página e no tamanho da página
 		int offset = (pageNumber - 1) * pageSize;
 
-		PreparedStatement ps = conn.prepareStatement("SELECT * FROM artists LIMIT ? OFFSET ?");
-		ps.setInt(1, pageSize);
-		ps.setInt(2, offset);
+		// Criar a consulta SQL com paginação
+		String sql = "SELECT * FROM artists WHERE visible = true LIMIT ? OFFSET ?";
 
+		// Criar um PreparedStatement para executar a consulta
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, pageSize);  // Definir o tamanho da página
+		ps.setInt(2, offset);     // Definir o offset baseado na página
+
+		// Executar a consulta para listar artistas com visible = true e com a paginação aplicada
 		ResultSet rs = ps.executeQuery();
 
+		// Processar os resultados da consulta
 		while (rs.next()) {
 			Artist artist = new Artist();
 			artist.setUuid(rs.getString("uuid"));
 			artist.setArtistname(rs.getString("artistname"));
 			artist.setListeners(rs.getInt("listeners"));
 			artist.setActive(rs.getBoolean("active"));
+			artist.setVisible(rs.getBoolean("visible"));
 
 			lista.add(artist);
 		}
 
+		// Fechar o ResultSet
 		rs.close();
+
+		// Fechar o PreparedStatement
+		ps.close();
 
 		return lista;
 	}
+
+
 
 	public int countTotalArtists() throws ClassNotFoundException, SQLException {
 		int totalArtists = 0;

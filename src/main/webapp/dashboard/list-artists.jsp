@@ -58,7 +58,12 @@
 		<tr>
 			<td><%= artist.getArtistname() %></td>
 			<td><a href="list-more-details-artists.jsp?artistId=<%= artist.getUuid() %>" class="btn btn-success btn-sm"> Mais detalhes </a></td>
-			<td><a href="#" class="btn btn-danger btn-sm">Deletar</a></td>
+			<td>
+				<a href="/dashboard/setArtistVisible?artistId=<%= artist.getUuid() %>&visible=false"
+				   class="btn btn-danger btn-sm">
+					Deletar
+				</a>
+			</td>
 		</tr>
 		<% } %>
 		</tbody>
