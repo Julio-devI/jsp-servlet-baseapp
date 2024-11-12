@@ -32,11 +32,11 @@ public class InstallDatabaseServlet extends HttpServlet {
 			service.createUserTable();
 			msg += "<h2>Create table user sucessful!</h2>\n";
 
-			service.deleteAlbunsTable();
-			msg += "<h2>Delete table user sucessful!</h2>\n";
+			service.deleteAlbumTable();
+			msg += "<h2>Delete table Album sucessful!</h2>\n";
 
-			service.createAlbunsTable();
-			msg += "<h2>Create table Albuns sucessful!</h2>\n";
+			service.createAlbumTable();
+			msg += "<h2>Create table Album sucessful!</h2>\n";
 			
 			page.println("<html lang='pt-br'><head><title>Teste</title></head><body>");
 			page.println(msg);

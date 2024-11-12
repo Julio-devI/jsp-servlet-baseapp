@@ -33,15 +33,15 @@ public class InstallService {
 					+ "    password VARCHAR(255) NOT NULL)");
 	}
 
-	public void deleteAlbunsTable() throws ClassNotFoundException, SQLException {
-		statement("DROP TABLE IF EXISTS users");
+	public void deleteAlbumTable() throws ClassNotFoundException, SQLException {
+		statement("DROP TABLE IF EXISTS albuns");
 	}
 
-	public void createAlbunsTable() throws ClassNotFoundException, SQLException {
+	public void createAlbumTable() throws ClassNotFoundException, SQLException {
 		statement("CREATE TABLE albuns ("
 				+ "    uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
-				+ "    nome VARCHAR(255) NOT NULL,"
-				+ "    reproducoes INTEGER NOT NULL,"
-				+ "    maisReproduzido BOOLEAN NOT NULL)");
+				+ "    albumname VARCHAR(255) NOT NULL,"
+				+ "    tracks INTEGER NOT NULL,"
+				+ "    released BOOLEAN NOT NULL)");
 	}
 }
