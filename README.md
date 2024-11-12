@@ -13,6 +13,7 @@ demandas:
 - Atualizei o Readme com minha demanda
 - Endereço do render: https://jsp-servlet-baseapp-imab.onrender.com
 - Criei o Database na máquina do cliente
+- Criei a funcao do usuario conseguir instalar novas tabelas no BD pelo endpoint "install"
 
 Ana Júlia Figuerêdo Bernardo;
 demandas:
