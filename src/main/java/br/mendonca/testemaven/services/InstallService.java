@@ -33,6 +33,17 @@ public class InstallService {
 					+ "    password VARCHAR(255) NOT NULL)");
 	}
 
+	public void createUserFollowersTable() throws ClassNotFoundException, SQLException {
+		statement("CREATE TABLE IF NOT EXISTS user_followers ("
+				+ "    uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
+				+ "    follower_id UUID NOT NULL,"
+				+ "    followed_id UUID NOT NULL,"
+				+ "    FOREIGN KEY (follower_id) REFERENCES users(uuid) ON DELETE CASCADE,"
+				+ "    FOREIGN KEY (followed_id) REFERENCES users(uuid) ON DELETE CASCADE,"
+				+ "    UNIQUE (follower_id, followed_id)"
+				+ ")");
+	}
+
 	public void deleteArtistTable() throws ClassNotFoundException, SQLException {
 		statement("DROP TABLE IF EXISTS artists");
 	}

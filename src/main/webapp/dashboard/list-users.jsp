@@ -30,6 +30,11 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link" href="/dashboard/dashboard.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/users">Users</a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard/artists">Artists</a></li>
+						<li class="nav-item"><a class="nav-link" href="../form-add-artists.jsp">Add Artists</a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard/albuns">Albuns</a></li>
+						<li class="nav-item"><a class="nav-link" href="../form-add-album.jsp">Add Albuns</a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard/hiddenArtists">Artists hidden</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/about.jsp">About</a></li>
 					</ul>
 					<span class="navbar-text">
@@ -45,10 +50,9 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col"></th>
 					<th scope="col">Nome</th>
 					<th scope="col">E-mail</th>
-					<th scope="col"></th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,10 +61,9 @@
 			for (UserDTO user : lista) {
 			%>
 			<tr>
-				<td>Editar</td>
 				<td><%= user.getName() %></td>
 				<td><%= user.getEmail() %></td>
-				<td>Apagar</td>
+				<td><a href="#" class="btn btn-success btn-sm"> Seguir </a></td>
 			</tr>
 			<% } %>
 			</tbody>
