@@ -2,7 +2,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="br.mendonca.testemaven.model.entities.Artist"%>
 
-<% if (session.getAttribute("user") != null && request.getAttribute("artistList") != null) { %>
+<% if (session.getAttribute("user") != null && request.getAttribute("hiddenArtistList") != null) { %>
 
 <!doctype html>
 <html lang="pt-br" data-bs-theme="dark">
@@ -48,13 +48,13 @@
 		<tr>
 			<th scope="col">Nome do artista</th>
 			<th>Mais detalhes</th>
-			<th>Deletar</th>
+			<th>Restaurar</th>
 		</tr>
 		</thead>
 		<tbody>
 		<%
-			List<Artist> artistList = (List<Artist>) request.getAttribute("artistList");
-			for (Artist artist : artistList) {
+			List<Artist> hiddenArtistList = (List<Artist>) request.getAttribute("hiddenArtistList");
+			for (Artist artist : hiddenArtistList) {
 		%>
 		<tr>
 			<td><%= artist.getArtistname() %></td>

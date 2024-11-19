@@ -39,6 +39,7 @@
 					<li class="nav-item"><a class="nav-link" href="/dashboard/users">Users</a></li>
 					<li class="nav-item"><a class="nav-link" href="/dashboard/artists">Artists</a></li>
 					<li class="nav-item"><a class="nav-link" href="../form-add-artists.jsp">Add Artists</a></li>
+					<li class="nav-item"><a class="nav-link" href="/dashboard/hiddenArtists">Artists hidden</a></li>
 					<li class="nav-item"><a class="nav-link" href="/dashboard/about.jsp">About</a></li>
 				</ul>
 				<span class="navbar-text">
