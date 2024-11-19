@@ -1,6 +1,6 @@
 package br.mendonca.testemaven.model.entities;
 
-public class Musicas {
+public class Musica {
     
     private String uuid;
 	private String nomeMusica;
@@ -28,8 +28,8 @@ public class Musicas {
 	public boolean getMusicaFavorita() {
 		return musicaFavorita;
 	}
-	public void setMusicaFavorita(boolean musicaFavorita) {
-		is.musicaFavorita = musicaFavorita;
-	}
+	//public void setMusicaFavorita(boolean musicaFavorita) {
+		//is.musicaFavorita = musicaFavorita;
+	//}
 
 }
