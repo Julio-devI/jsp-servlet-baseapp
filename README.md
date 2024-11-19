@@ -25,6 +25,10 @@ demandas:
 - Criei a funcao do usuario conseguir visualizar todos os individuos listados com paginacao de 3 individuos
 - Criei a funcao que permite que o usuario delete, mas o item nao e totalmente deletado do banco 
 
+## Semana 4:
+- Criei a funcao de o usuario conseguir "deletar" um artista e conseguir visualizar os artistas "deletados"
+
+
 Ana Júlia Figuerêdo Bernardo;
 demandas:
 
