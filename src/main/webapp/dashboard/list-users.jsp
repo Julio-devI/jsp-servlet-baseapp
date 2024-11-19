@@ -36,6 +36,8 @@
 						<li class="nav-item"><a class="nav-link" href="../form-add-album.jsp">Add Albuns</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/hiddenArtists">Artists hidden</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/about.jsp">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Ver seguidores</a></li>
+
 					</ul>
 					<span class="navbar-text">
 						<a class="btn btn-success" href="/auth/logoff">Logoff</a>
@@ -46,7 +48,7 @@
     
     
     
-    	<h1 class="h3 mb-3 fw-normal">Usuários</h1>
+    	<h1 class="h3 mb-3 fw-normal">Usuários </h1>
 		<table class="table">
 			<thead>
 				<tr>
@@ -67,8 +69,8 @@
 					<%
 						// Obter o UUID do usuário logado e o UUID do usuário listado
 						UserDTO loggedUser = (UserDTO) session.getAttribute("user");
-						String loggedUserUuid = loggedUser.getUuid(); // UUID do usuário logado
-						String followedUserUuid = user.getUuid(); // UUID do usuário que está sendo listado
+						String loggedUserUuid = loggedUser.getUuid().toString(); // UUID do usuário logado
+						String followedUserUuid = user.getUuid().toString(); // UUID do usuário que está sendo listado
 
 						// Verificar se o usuário logado está tentando se seguir
 						if (!loggedUserUuid.equals(followedUserUuid)) {

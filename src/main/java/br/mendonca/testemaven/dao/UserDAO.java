@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import br.mendonca.testemaven.model.entities.User;
 
@@ -74,6 +75,39 @@ public class UserDAO {
 		
 		return user;
 	}
+
+	public void followUser(Connection connection, UUID followerId, UUID followedId) throws SQLException {
+		String sql = "INSERT INTO user_followers (follower_id, followed_id) VALUES (?, ?)";
+		try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+			stmt.setObject(1, followerId); // Usando UUID como parâmetro
+			stmt.setObject(2, followedId); // Usando UUID como parâmetro
+			stmt.executeUpdate();
+		}
+	}
+
+	public void unfollowUser(Connection connection, UUID followerId, UUID followedId) throws SQLException {
+		String sql = "DELETE FROM user_followers WHERE follower_id = ? AND followed_id = ?";
+		try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+			stmt.setObject(1, followerId); // Usando UUID como parâmetro
+			stmt.setObject(2, followedId); // Usando UUID como parâmetro
+			stmt.executeUpdate();
+		}
+	}
+
+	public List<UUID> getFollowing(Connection connection, UUID followerId) throws SQLException {
+		String sql = "SELECT followed_id FROM user_followers WHERE follower_id = ?";
+		try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+			stmt.setObject(1, followerId); // Usando UUID como parâmetro
+			try (ResultSet rs = stmt.executeQuery()) {
+				List<UUID> followingList = new ArrayList<>();
+				while (rs.next()) {
+					followingList.add((UUID) rs.getObject("followed_id")); // Recupera os UUIDs
+				}
+				return followingList;
+			}
+		}
+	}
+
 
 	//TO DO: Nao testado
 	public List<User> search(String name) throws ClassNotFoundException, SQLException {
