@@ -30,7 +30,14 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link" href="/dashboard/dashboard.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/users">Users</a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard/artists">Artists</a></li>
+						<li class="nav-item"><a class="nav-link" href="../form-add-artists.jsp">Add Artists</a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard/albuns">Albuns</a></li>
+						<li class="nav-item"><a class="nav-link" href="../form-add-album.jsp">Add Albuns</a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard/hiddenArtists">Artists hidden</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/about.jsp">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Ver seguidores</a></li>
+
 					</ul>
 					<span class="navbar-text">
 						<a class="btn btn-success" href="/auth/logoff">Logoff</a>
@@ -41,14 +48,13 @@
     
     
     
-    	<h1 class="h3 mb-3 fw-normal">Usuários</h1>
+    	<h1 class="h3 mb-3 fw-normal">Usuários </h1>
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col"></th>
 					<th scope="col">Nome</th>
 					<th scope="col">E-mail</th>
-					<th scope="col"></th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,10 +63,32 @@
 			for (UserDTO user : lista) {
 			%>
 			<tr>
-				<td>Editar</td>
 				<td><%= user.getName() %></td>
 				<td><%= user.getEmail() %></td>
-				<td>Apagar</td>
+				<td>
+					<%
+						// Obter o UUID do usuário logado e o UUID do usuário listado
+						UserDTO loggedUser = (UserDTO) session.getAttribute("user");
+						String loggedUserUuid = loggedUser.getUuid().toString(); // UUID do usuário logado
+						String followedUserUuid = user.getUuid().toString(); // UUID do usuário que está sendo listado
+
+						// Verificar se o usuário logado está tentando se seguir
+						if (!loggedUserUuid.equals(followedUserUuid)) {
+					%>
+					<form method="post" action="/seguindo">
+						<input type="hidden" name="action" value="follow">
+						<input type="hidden" name="followerId" value="<%= loggedUserUuid %>">
+						<input type="hidden" name="followedId" value="<%= followedUserUuid %>">
+						<button type="submit" class="btn btn-success btn-sm">Seguir</button>
+					</form>
+					<%
+					} else {
+					%>
+					<button class="btn btn-secondary btn-sm" disabled>Você não pode seguir a si mesmo</button>
+					<%
+						}
+					%>
+				</td>
 			</tr>
 			<% } %>
 			</tbody>

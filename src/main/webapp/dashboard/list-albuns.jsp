@@ -34,6 +34,7 @@
 						<li class="nav-item"><a class="nav-link" href="/dashboard/albuns">Album</a></li>
 						<li class="nav-item"><a class="nav-link" href="../form-add-artist.jsp">Add Artists</a></li>
 						<li class="nav-item"><a class="nav-link" href="../form-add-album.jsp">Add Albuns</a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard/hiddenAlbuns">Albuns hidden</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/about.jsp">About</a></li>
 					</ul>
 					<span class="navbar-text">
@@ -52,6 +53,7 @@
 					<th scope="col">Nome do album</th>
 					<th scope="col">Faixas do album</th>
 					<th scope="col">O Album foi lançado?</th>
+					<th>Mais detalhes</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -63,10 +65,34 @@
 				<td><%= album.getAlbumname() %></td>
 				<td><%= album.getTracks() %></td>
 				<td><%= album.getReleased() ? "Sim" : "Nao"%></td>
+				<td><a href="list-more-details-albuns.jsp?albumId=<%= album.getUuid() %>" class="btn btn-success btn-sm"> Mais detalhes </a></td>
+				<td>
+                	<a href="/dashboard/setAlbumVisible?albumId=<%= album.getUuid() %>&visible=false"
+                	    class="btn btn-danger btn-sm">
+                		  Deletar
+                	</a>
+                </td>
 			</tr>
 			<% } %>
 			</tbody>
 		</table>
+
+		<div class="pagination">
+        		<%
+        			int currentPage = (Integer) request.getAttribute("currentPage");
+        			int totalPages = (Integer) request.getAttribute("totalPages");
+        		%>
+
+        		<% if (currentPage > 1) { %>
+        		<a href="?page=<%= currentPage - 1 %>" class="btn btn-primary">Anterior</a>
+        		<% } %>
+
+        		<span>Página <%= currentPage %> de <%= totalPages %></span>
+
+        		<% if (currentPage < totalPages) { %>
+        		<a href="?page=<%= currentPage + 1 %>" class="btn btn-primary">Próxima</a>
+        		<% } %>
+        	</div>
 
 
 	</main>

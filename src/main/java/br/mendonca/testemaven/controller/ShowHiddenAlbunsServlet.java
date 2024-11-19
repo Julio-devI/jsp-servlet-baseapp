@@ -13,8 +13,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/dashboard/albuns")
-public class ListAlbunsServlet extends HttpServlet {
+@WebServlet("/dashboard/hiddenAlbuns")
+public class ShowHiddenAlbunsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final int PAGE_SIZE = 3;
 
@@ -25,20 +25,24 @@ public class ListAlbunsServlet extends HttpServlet {
         try {
             int pageNumber = 1;
             String pageParam = request.getParameter("page");
+
             if(pageParam != null && !pageParam.isEmpty())
             {
                 pageNumber = Integer.parseInt(pageParam);
             }
 
             AlbumDAO albumDAO = new AlbumDAO();
-            List<Album> albumList = albumDAO.listAllAlbum(pageNumber, PAGE_SIZE);
-            int totalAlbuns = albumDAO.countTotalAlbuns();
-            int totalPages = (int) Math.ceil((double) totalAlbuns / PAGE_SIZE);
 
-            request.setAttribute("albumList", albumList);
+            List<Album> hiddenAlbumList = albumDAO.listHiddenAlbuns(pageNumber, PAGE_SIZE);
+
+            int totalHiddenAlbuns = albumDAO.countTotalAlbuns();
+            int totalPages = (int) Math.ceil((double) totalHiddenAlbuns / PAGE_SIZE);
+
+            request.setAttribute("hiddenAlbumList", hiddenAlbumList);
             request.setAttribute("currentPage", pageNumber);
             request.setAttribute("totalPages", totalPages);
-            request.getRequestDispatcher("list-albuns.jsp").forward(request, response);
+
+            request.getRequestDispatcher("hidden-albuns.jsp").forward(request, response);
         } catch (Exception e) {
             // Escreve as mensagens de Exception em uma pagina de resposta.
             // Nao apagar este bloco.
@@ -55,7 +59,6 @@ public class ListAlbunsServlet extends HttpServlet {
 
         }
     }
-
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
