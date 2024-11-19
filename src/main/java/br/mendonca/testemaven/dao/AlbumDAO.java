@@ -22,14 +22,32 @@ public class AlbumDAO {
         ps.close();
     }
 
+    public void setAlbumVisible(UUID albumId, boolean visible) throws ClassNotFoundException, SQLException {
+        Connection conn = ConnectionPostgres.getConexao();
+        conn.setAutoCommit(true);
+        String sql = "UPDATE albuns SET visible = ? WHERE uuid = ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setBoolean(1, visible);
+            ps.setObject(2, albumId);
+            ps.executeUpdate();
+        }
+    }
+
     public List<Album> listAllAlbum(int pageNumber, int pageSize) throws ClassNotFoundException, SQLException {
         ArrayList<Album> lista = new ArrayList<Album>();
 
         Connection conn = ConnectionPostgres.getConexao();
         conn.setAutoCommit(true);
 
+        if (pageNumber < 1 || pageSize < 1) {
+            throw new IllegalArgumentException("pageNumber e pageSize devem ser maiores que 0");
+        }
+
         int offset = (pageNumber - 1) * pageSize;
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM albuns LIMIT ? OFFSET ?");
+
+        String sql = "SELECT * FROM albuns WHERE visible = true LIMIT ? OFFSET ?";
+
+        PreparedStatement ps = conn.prepareStatement(sql);
         ps.setInt(1, pageSize);
         ps.setInt(2, offset);
         ResultSet rs = ps.executeQuery();
@@ -40,6 +58,7 @@ public class AlbumDAO {
             album.setAlbumname(rs.getString("albumname"));
             album.setTracks(rs.getInt("tracks"));
             album.setReleased(rs.getBoolean("released"));
+            album.setVisible(rs.getBoolean("visible"));
 
             lista.add(album);
         }

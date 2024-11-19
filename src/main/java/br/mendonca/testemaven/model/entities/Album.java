@@ -6,6 +6,7 @@ public class Album {
     private String albumname;
     private Integer tracks;
     private Boolean released;
+    private Boolean visible;
 
     public String getUuid() {
         return uuid;
@@ -37,5 +38,13 @@ public class Album {
 
     public void setReleased(Boolean released) {
         this.released = released;
+    }
+
+    public Boolean getVisible() {
+        return visible;
+    }
+
+    public void setVisible(Boolean visible) {
+        this.visible = visible;
     }
 }

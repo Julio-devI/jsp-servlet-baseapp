@@ -52,6 +52,7 @@
 					<th scope="col">Nome do album</th>
 					<th scope="col">Faixas do album</th>
 					<th scope="col">O Album foi lançado?</th>
+					<th>Mais detalhes</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -63,6 +64,13 @@
 				<td><%= album.getAlbumname() %></td>
 				<td><%= album.getTracks() %></td>
 				<td><%= album.getReleased() ? "Sim" : "Nao"%></td>
+				<td><a href="list-more-details-albuns.jsp?albumId=<%= album.getUuid() %>" class="btn btn-success btn-sm"> Mais detalhes </a></td>
+				<td>
+                	<a href="/dashboard/setAlbumVisible?albumId=<%= album.getUuid() %>&visible=false"
+                	    class="btn btn-danger btn-sm">
+                		  Deletar
+                	</a>
+                </td>
 			</tr>
 			<% } %>
 			</tbody>

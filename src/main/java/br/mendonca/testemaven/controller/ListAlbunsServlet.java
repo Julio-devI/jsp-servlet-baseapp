@@ -32,8 +32,8 @@ public class ListAlbunsServlet extends HttpServlet {
 
             AlbumDAO albumDAO = new AlbumDAO();
             List<Album> albumList = albumDAO.listAllAlbum(pageNumber, PAGE_SIZE);
-            int totalArtists = albumDAO.countTotalAlbuns();
-            int totalPages = (int) Math.ceil((double) totalArtists / PAGE_SIZE);
+            int totalAlbuns = albumDAO.countTotalAlbuns();
+            int totalPages = (int) Math.ceil((double) totalAlbuns / PAGE_SIZE);
 
             request.setAttribute("albumList", albumList);
             request.setAttribute("currentPage", pageNumber);
