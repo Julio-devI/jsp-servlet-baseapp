@@ -57,3 +57,9 @@ semana 2:
 - Criei a funcao do usuario conseguir exibir as propriedades de uma entidade selecionada;
 - Preenchi o about.
 - Criei a funcao do usuario conseguir instalar novas tabelas no banco de dados com 7 individuos pelo endpoint "install"
+
+### Semana 4:
+- Criei a funcao do usuario conseguir visualizar todos os individuos listados com paginacao de 3 individuos
+- Criei a funcao que permite que o usuario delete, mas o item nao e totalmente deletado do banco
+- Criei a funcao de o usuario conseguir "deletar" um artista e conseguir visualizar os artistas "deletados"
+- Adicionei minha regra de negócio na pagina about
