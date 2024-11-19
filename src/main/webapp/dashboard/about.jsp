@@ -74,7 +74,7 @@ if (session.getAttribute("user") != null) {
 				<tr>
                 	<td scope="col">Luís Gustavo Calado Pereira dos Santos</td>
                 	<td scope="col">Album</td>
-                	<td scope="col">Coloque aqui sua regra de negócio</td>
+                	<td scope="col">O usuario pode, na listagem de usuarios, procurar por um usuario por parte do nome e utilizar filtros: um para a propriedade de numero idade minima e maxima e outro para a prorpiedade booleana status. Os dados do banco devem vir filtrados por um ou mais endpoints</td>
                 </tr>
 			<tbody>
 			</tbody>
