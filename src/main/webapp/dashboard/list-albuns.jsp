@@ -68,6 +68,23 @@
 			</tbody>
 		</table>
 
+		<div class="pagination">
+        		<%
+        			int currentPage = (Integer) request.getAttribute("currentPage");
+        			int totalPages = (Integer) request.getAttribute("totalPages");
+        		%>
+
+        		<% if (currentPage > 1) { %>
+        		<a href="?page=<%= currentPage - 1 %>" class="btn btn-primary">Anterior</a>
+        		<% } %>
+
+        		<span>Página <%= currentPage %> de <%= totalPages %></span>
+
+        		<% if (currentPage < totalPages) { %>
+        		<a href="?page=<%= currentPage + 1 %>" class="btn btn-primary">Próxima</a>
+        		<% } %>
+        	</div>
+
 
 	</main>
 
