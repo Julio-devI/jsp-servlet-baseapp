@@ -33,7 +33,14 @@ public class AlbumService {
         albumDAO.registerAlbum(album);
     }
 
-    public List<Album> listAllAlbuns() throws ClassNotFoundException, SQLException {
-        return albumDAO.listAllAlbum();
+    public List<Album> listAllAlbum(int pageNumber, int itemsPerPage) throws ClassNotFoundException, SQLException {
+        int offset = (pageNumber - 1) * itemsPerPage;
+        return albumDAO.listAllAlbum(offset, itemsPerPage);
+    }
+    public int countTotalAbuns() throws ClassNotFoundException, SQLException {
+        return albumDAO.countTotalAlbuns();
+    }
+    public List<Album> listAllAlbuns(int pageNumber, int itemsPerPage) throws ClassNotFoundException, SQLException {
+        return albumDAO.listAllAlbum(pageNumber, itemsPerPage);
     }
 }

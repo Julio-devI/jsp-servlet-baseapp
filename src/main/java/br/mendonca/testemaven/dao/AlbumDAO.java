@@ -6,6 +6,7 @@ import br.mendonca.testemaven.model.entities.User;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class AlbumDAO {
 
@@ -21,14 +22,17 @@ public class AlbumDAO {
         ps.close();
     }
 
-    public List<Album> listAllAlbum() throws ClassNotFoundException, SQLException {
+    public List<Album> listAllAlbum(int pageNumber, int pageSize) throws ClassNotFoundException, SQLException {
         ArrayList<Album> lista = new ArrayList<Album>();
 
         Connection conn = ConnectionPostgres.getConexao();
         conn.setAutoCommit(true);
 
-        Statement st = conn.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM albuns");
+        int offset = (pageNumber - 1) * pageSize;
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM albuns LIMIT ? OFFSET ?");
+        ps.setInt(1, pageSize);
+        ps.setInt(2, offset);
+        ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {
             Album album = new Album();
@@ -45,6 +49,19 @@ public class AlbumDAO {
         return lista;
     }
 
+    public int countTotalAlbuns() throws ClassNotFoundException, SQLException {
+        int totalAlbuns = 0;
+        Connection conn = ConnectionPostgres.getConexao();
+        conn.setAutoCommit(true);
+        PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM albuns");
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            totalAlbuns = rs.getInt(1);
+        }
+        rs.close();
+        return totalAlbuns;
+    }
+
     public Album search(String albumname, Integer tracks) throws ClassNotFoundException, SQLException {
         Album album = null;
 
@@ -52,9 +69,9 @@ public class AlbumDAO {
         conn.setAutoCommit(true);
 
         // Apesar de qualquer SQL funcionar com Statement, a abordagem de usar Prepared Statement evita SQL Injection.
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM users WHERE email = ? AND password = ?");
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM albuns WHERE albumname = ? AND tracks = ?");
         ps.setString(1, albumname);
-        ps.setString(2, tracks.toString());
+        ps.setInt(2, tracks);
         System.out.println(ps); // Exibe no console do Docker a query j� montada.
 
         ResultSet rs = ps.executeQuery();
@@ -72,6 +89,28 @@ public class AlbumDAO {
         return album;
     }
 
+    public Album searchByID(UUID albumID) throws ClassNotFoundException, SQLException {
+        Album album = null;
+        Connection conn = ConnectionPostgres.getConexao();
+        conn.setAutoCommit(true);
+
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM albuns WHERE albumname = ? AND tracks = ?");
+        ps.setString(1, albumID.toString());
+
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+
+            album = new Album();
+            album.setUuid(rs.getString("uuid"));
+            album.setAlbumname(rs.getString("albumname"));
+            album.setTracks(rs.getInt("tracks"));
+            album.setReleased(rs.getBoolean("released"));
+        }
+
+        rs.close();
+
+        return album;
+    }
     // TODO: Nao testado
     public List<User> search(String name) throws ClassNotFoundException, SQLException {
         ArrayList<User> lista = new ArrayList<User>();
