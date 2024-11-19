@@ -28,6 +28,7 @@ demandas:
 ## Semana 4:
 - Criei a funcao de o usuario conseguir "deletar" um artista e conseguir visualizar os artistas "deletados"
 - Editei o about com a regra de negocio que eu estava fazendo
+- Criei a funcao do usuario conseguir seguir outro usuario 
 
 Ana Júlia Figuerêdo Bernardo;
 demandas:
