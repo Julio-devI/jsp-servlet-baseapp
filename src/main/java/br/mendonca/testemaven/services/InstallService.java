@@ -22,7 +22,13 @@ public class InstallService {
 	}
 	
 	public void deleteUserTable() throws ClassNotFoundException, SQLException {
+		statement("DROP TABLE IF EXISTS user_followers CASCADE");
+
 		statement("DROP TABLE IF EXISTS users");
+	}
+
+	public void deleteUserFollowersTable() throws ClassNotFoundException, SQLException {
+		statement("DROP TABLE IF EXISTS user_followers");
 	}
 	
 	public void createUserTable() throws ClassNotFoundException, SQLException {
@@ -34,7 +40,7 @@ public class InstallService {
 	}
 
 	public void createUserFollowersTable() throws ClassNotFoundException, SQLException {
-		statement("CREATE TABLE IF NOT EXISTS user_followers ("
+		statement("CREATE TABLE user_followers ("
 				+ "    uuid UUID DEFAULT gen_random_uuid() PRIMARY KEY,"
 				+ "    follower_id UUID NOT NULL,"
 				+ "    followed_id UUID NOT NULL,"
@@ -118,52 +124,52 @@ public class InstallService {
 				+ true + ")");
 	}
 
-	public void seedAlbum1Table() throws ClassNotFoundException, SQLException {
-		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
-				+ "Like a Virgin" + "', "
-				+ 9 + ", "
-				+ true + ")");
-	}
-
-	public void seedAlbum2Table() throws ClassNotFoundException, SQLException {
-		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
-				+ "24K Magic" + "', "
-				+ 9 + ", "
-				+ true + ")");
-	}
-
-	public void seedAlbum3Table() throws ClassNotFoundException, SQLException {
-		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
-				+ "Thriller" + "', "
-				+ 15 + ", "
-				+ true + ")");
-	}
-
-	public void seedAlbum4Table() throws ClassNotFoundException, SQLException {
-		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
-				+ "Dark Side of Moon" + "', "
-				+ 8 + ", "
-				+ true + ")");
-	}
-
-	public void seedAlbum5Table() throws ClassNotFoundException, SQLException {
-		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
-				+ "Back in Black" + "', "
-				+ 14 + ", "
-				+ true + ")");
-	}
-
-	public void seedAlbum6Table() throws ClassNotFoundException, SQLException {
-		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
-				+ "999" + "', "
-				+ 9 + ", "
-				+ false + ")");
-	}
-
-	public void seedAlbum7Table() throws ClassNotFoundException, SQLException {
-		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
-				+ "The Hills" + "', "
-				+ 13 + ", "
-				+ true + ")");
-	}
+//	public void seedAlbum1Table() throws ClassNotFoundException, SQLException {
+//		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
+//				+ "Like a Virgin" + "', "
+//				+ 9 + ", "
+//				+ true + ")");
+//	}
+//
+//	public void seedAlbum2Table() throws ClassNotFoundException, SQLException {
+//		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
+//				+ "24K Magic" + "', "
+//				+ 9 + ", "
+//				+ true + ")");
+//	}
+//
+//	public void seedAlbum3Table() throws ClassNotFoundException, SQLException {
+//		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
+//				+ "Thriller" + "', "
+//				+ 15 + ", "
+//				+ true + ")");
+//	}
+//
+//	public void seedAlbum4Table() throws ClassNotFoundException, SQLException {
+//		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
+//				+ "Dark Side of Moon" + "', "
+//				+ 8 + ", "
+//				+ true + ")");
+//	}
+//
+//	public void seedAlbum5Table() throws ClassNotFoundException, SQLException {
+//		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
+//				+ "Back in Black" + "', "
+//				+ 14 + ", "
+//				+ true + ")");
+//	}
+//
+//	public void seedAlbum6Table() throws ClassNotFoundException, SQLException {
+//		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
+//				+ "999" + "', "
+//				+ 9 + ", "
+//				+ false + ")");
+//	}
+//
+//	public void seedAlbum7Table() throws ClassNotFoundException, SQLException {
+//		statement("INSERT INTO artists (albumname, tracks, released) VALUES ('"
+//				+ "The Hills" + "', "
+//				+ 13 + ", "
+//				+ true + ")");
+//	}
 }
