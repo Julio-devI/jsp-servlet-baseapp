@@ -19,7 +19,7 @@ import java.util.List;
 public class SeguindoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action"); // ação: follow, unfollow, view
+        String action = request.getParameter("action");
         int followerId = Integer.parseInt(request.getParameter("followerId"));
         int followedId = Integer.parseInt(request.getParameter("followedId")); // Pode ser usado para follow/unfollow
 

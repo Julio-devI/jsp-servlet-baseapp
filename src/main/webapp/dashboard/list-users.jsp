@@ -63,7 +63,30 @@
 			<tr>
 				<td><%= user.getName() %></td>
 				<td><%= user.getEmail() %></td>
-				<td><a href="#" class="btn btn-success btn-sm"> Seguir </a></td>
+				<td>
+					<%
+						// Obter o UUID do usuário logado e o UUID do usuário listado
+						UserDTO loggedUser = (UserDTO) session.getAttribute("user");
+						String loggedUserUuid = loggedUser.getUuid(); // UUID do usuário logado
+						String followedUserUuid = user.getUuid(); // UUID do usuário que está sendo listado
+
+						// Verificar se o usuário logado está tentando se seguir
+						if (!loggedUserUuid.equals(followedUserUuid)) {
+					%>
+					<form method="post" action="/seguindo">
+						<input type="hidden" name="action" value="follow">
+						<input type="hidden" name="followerId" value="<%= loggedUserUuid %>">
+						<input type="hidden" name="followedId" value="<%= followedUserUuid %>">
+						<button type="submit" class="btn btn-success btn-sm">Seguir</button>
+					</form>
+					<%
+					} else {
+					%>
+					<button class="btn btn-secondary btn-sm" disabled>Você não pode seguir a si mesmo</button>
+					<%
+						}
+					%>
+				</td>
 			</tr>
 			<% } %>
 			</tbody>

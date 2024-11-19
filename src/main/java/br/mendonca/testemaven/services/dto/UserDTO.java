@@ -6,7 +6,10 @@ public class UserDTO {
 	
 	private String name;
 	private String email;
-	
+	private String uuid;
+
+	public String getUuid(){ return uuid; }
+	public void setUuid(String uuid){ this.uuid = uuid; }
 	public String getName() {
 		return name;
 	}
@@ -23,6 +26,7 @@ public class UserDTO {
 	
 	public static UserDTO userMapper(User user) {
 		UserDTO dto = new UserDTO();
+		dto.setUuid(user.getUuid().toString());
 		dto.setName(user.getName());
 		dto.setEmail(user.getEmail());
 		
