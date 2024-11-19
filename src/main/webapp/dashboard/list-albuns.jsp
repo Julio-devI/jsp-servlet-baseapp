@@ -34,6 +34,7 @@
 						<li class="nav-item"><a class="nav-link" href="/dashboard/albuns">Album</a></li>
 						<li class="nav-item"><a class="nav-link" href="../form-add-artist.jsp">Add Artists</a></li>
 						<li class="nav-item"><a class="nav-link" href="../form-add-album.jsp">Add Albuns</a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard/hiddenAlbuns">Albuns hidden</a></li>
 						<li class="nav-item"><a class="nav-link" href="/dashboard/about.jsp">About</a></li>
 					</ul>
 					<span class="navbar-text">

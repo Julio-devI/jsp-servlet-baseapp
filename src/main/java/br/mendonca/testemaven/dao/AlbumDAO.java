@@ -33,6 +33,37 @@ public class AlbumDAO {
         }
     }
 
+    public List<Album> listHiddenAlbuns(int pageNumber, int pageSize) throws ClassNotFoundException, SQLException {
+        Connection conn = ConnectionPostgres.getConexao();
+        conn.setAutoCommit(true);
+        if (pageNumber < 1 || pageSize < 1) {
+            throw new IllegalArgumentException("pageNumber e pageSize devem ser maiores que 0");
+        }
+        ArrayList<Album> lista = new ArrayList<Album>();
+        int offset = (pageNumber - 1) * pageSize;
+        String sql = "SELECT * FROM albuns WHERE visible = false LIMIT ? OFFSET ?";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setInt(1, pageSize);
+        ps.setInt(2, offset);
+
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Album album = new Album();
+            album.setUuid(rs.getString("uuid"));
+            album.setAlbumname(rs.getString("albumname"));
+            album.setTracks(rs.getInt("tracks"));
+            album.setReleased(rs.getBoolean("released"));
+            album.setVisible(rs.getBoolean("visible"));
+            lista.add(album);
+        }
+
+        rs.close();
+
+        ps.close();
+        return lista;
+    }
+
     public List<Album> listAllAlbum(int pageNumber, int pageSize) throws ClassNotFoundException, SQLException {
         ArrayList<Album> lista = new ArrayList<Album>();
 
