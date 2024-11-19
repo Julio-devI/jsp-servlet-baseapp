@@ -28,7 +28,7 @@ public class SetArtistVisibleServlet extends HttpServlet {
             UUID artistId = UUID.fromString(artistIdParam);
             boolean visible = Boolean.parseBoolean(visibleParam);
 
-            // Chamando o método do DAO para atualizar a visibilidade
+            // Chamando o metodo do DAO para atualizar a visibilidade
             ArtistDAO artistDAO = new ArtistDAO();
             artistDAO.setArtistVisible(artistId, visible);
 
