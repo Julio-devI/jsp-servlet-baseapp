@@ -64,7 +64,7 @@ if (session.getAttribute("user") != null) {
 				<tr>
 					<td scope="col">Júlio Alves de Almeida Valença</td>
 					<td scope="col">Artists</td>
-					<td scope="col">Coloque aqui sua regra de negócio</td>
+					<td scope="col">O usuário pode, na listagem de usuários, selecionar um usuário para seguir através do endpoint 'seguindo' visualizar quem ele segue e deixar de seguir</td>
 				</tr>
 				<tr>
 					<td scope="col">Ana Júlia Figuerêdo Bernardo</td>
